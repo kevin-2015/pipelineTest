@@ -17,7 +17,7 @@ def call(body) {
                 //在指定目录下执行命令  
                 steps.dir('MyApplication/') {
                   //steps. gradle_command
-				  bat 'clean build --stacktrace --info'
+				  bat 'gradlew assembleDebug'
                 }   
            }
 		   
