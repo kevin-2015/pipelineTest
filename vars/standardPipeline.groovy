@@ -10,7 +10,20 @@ def call(body) {
 			stage("scm checkout") {                
 				checkout scm
 			}
+			
+			 stage("build") {
+                def gradle_command = "gradle --quiet clean build";
+                steps.echo gradle_command
+                //在指定目录下执行命令  
+                steps.dir('MyApplication/') {
+                  steps.sh gradle_command
+                }   
+           }
+		   
+			
 		   }
+		  
+		  
 		   
 		   //def buildSteps = new BaseSteps(this, config)
            // def envName = "build"
