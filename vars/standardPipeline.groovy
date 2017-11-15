@@ -16,7 +16,8 @@ def call(body) {
                 steps.echo gradle_command
                 //在指定目录下执行命令  
                 steps.dir('MyApplication/') {
-                  steps.sh gradle_command
+                  //steps. gradle_command
+				  bat 'gradle --quiet clean build'
                 }   
            }
 		   
