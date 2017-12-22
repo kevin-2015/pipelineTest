@@ -17,8 +17,9 @@ def call(body) {
             steps.echo gradle_command
             //在指定目录下执行命令  
             steps.dir('MyApplication/') {
-			  steps.sh "chmod 755 gradlew"
-              steps.sh "./gradlew assembleRelease"
+			  //steps.sh "chmod 755 gradlew"
+             // steps.sh "./gradlew assembleRelease"
+			    steps.sh gradle_command
 		           // bat 'gradlew assembleDebug'
             }   
          }
